@@ -1,0 +1,16 @@
+#test {
+    border-radius: 10px;
+    background-color: lightcoral;
+}
+
+/*Css for Navbar elements*/
+#test .nav-link {
+    color: darkred;
+    font-size: large;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.custom-masked {
+    clip-path: circle(40%);
+  }
