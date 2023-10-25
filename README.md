@@ -10,6 +10,8 @@ website must include the following:
   - A page including at least three different job openings at the company.
   - An online job application form that allows applicants to apply for jobs at the company.
 
+**---------------------------------------------------------------------------------------------**
+
 **TO-DO:**
   - **Decide what the company is**
       - Where it is located
@@ -24,6 +26,8 @@ website must include the following:
         - Website traversal 
       - Find/Add Images
       - "Working" application 
+
+**---------------------------------------------------------------------------------------------**
   
 **Template Websites with great design**
   - Arkane Studios: [https://www.arkane-studios.com/en/austin#careers](url)
