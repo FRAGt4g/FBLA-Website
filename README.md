@@ -1,6 +1,6 @@
 # FBLA-Website
 This is the website (code) for the FBLA project 2023 with Jacob Mathew, and Matthew Shi.
-Link to pdf with info: [https://connect.fbla.org/headquarters/files/High%20School%20Competitive%20Events%20Resources/Individual%20Guidelines/Presentation%20Events/Website-Coding--Development.pdf](url)
+Link to pdf with info: https://connect.fbla.org/headquarters/files/High%20School%20Competitive%20Events%20Resources/Individual%20Guidelines/Presentation%20Events/Website-Coding--Development.pdf
 
 **Goals:**
 A business has approached your team and asked you to develop a website that advertises
