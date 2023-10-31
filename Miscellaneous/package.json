@@ -1,0 +1,14 @@
+{
+  "name": "fbla-website-1",
+  "version": "1.0.0",
+  "description": "This is the website (code) for the FBLA project 2023 with Jacob Mathew, and Matthew Shi.\r Link to pdf with info: https://connect.fbla.org/headquarters/files/High%20School%20Competitive%20Events%20Resources/Individual%20Guidelines/Presentation%20Events/Website-Coding--Development.pdf",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.2"
+  }
+}
