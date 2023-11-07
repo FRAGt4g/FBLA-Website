@@ -1,5 +1,8 @@
-#applyHereBG {
-    width: 100px;
-    height: 100px;
-    background-color: blue;
+@import '/Miscellaneous/node_modules/bootstrap/main.css';
+body {
+    background-color: var(--bs-secondary);
+}
+
+.brandName {
+    font-size: 2rem;
 }

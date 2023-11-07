@@ -6,16 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../Miscellaneous/node_modules/bootstrap/main.css" rel="stylesheet">
     <link href="MainPage.css" rel="stylesheet">
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script
-      src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script defer src="MainPage.js"></script>
   </head>
 
-  <body class="bg-primary">
+  <body id="body">
     <!--    NAVBAR    -->
-    <nav style="height: 90px;" class="show custom-shadow navbar navbar-expand-sm bg-primary navbar-dark sticky-top">
-      <a type="button" class="navbar-brand" href="#body"> 
+    <nav style="height: 90px;" class="show custom-shadow navbar navbar-expand-sm bg-primary-grad2 navbar-dark sticky-top">
+      <a type="button" class="navbar-brand" href="../Main-Page/index.html"> 
         <strong class="text-secondary brandName m-4">
           MYTHOS
         </strong>
@@ -40,18 +39,10 @@
     </nav>
 
     <div id="main_container" class="container-fluid">
-      <!--<div class="row">
-        <div class="align-items-center p-5 bg-secondary text-white startJumbotron">
-          <div class="shadow">
-            <p>TURNING DREAMS TO</p>
-            <p id="reality" class="text-primary">REALITY</p> 
-          </div>
-        </div>
-      </div>-->
       <span>
-        <div class="rounded-3 bg-secondary text-white startJumbotron">
+        <div id="intro-block" class="z-3 rounded-3 text-white startJumbotron">
           <p class="m-3">TURNING DREAMS TO</p>
-          <p id="reality" class="text-primary">REALITY</p> 
+          <p onclick="zoomin(this)" id="reality" class="text-secondary-grad align-bottom text-primary">REALITY</p> 
         </div>
       </span>
 
@@ -130,71 +121,4 @@
       </div>
     </div>
   </body>
-  <script src="MainPage.js"></script>
 </html>
-
-<!--<div id="accordion-cf">
-        <div class="card">
-          <div class="card-header btn card-header" data-bs-toggle="collapse" href="#collapseOne">
-            <a class="btn">
-              Our mission
-            </a>
-          </div>
-          <div id="collapseOne" class="collapse">
-            <div class="card-body">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header btn card-header" data-bs-toggle="collapse" href="#collapseTwo">
-            <a class="btn">
-              Games
-            </a>
-          </div>
-          <div id="collapseTwo" class="collapse">
-            <div class="card-body">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </div>
-          </div>
-        </div>
-        
-        <div class="card">
-          <div class="card-header btn card-header" data-bs-toggle="collapse" href="#collapseThree">
-            <a class="btn">
-              Get in contact
-            </a>
-          </div>
-          <div id="collapseThree" class="collapse">
-            <div class="card-body">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </div>
-          </div>
-        </div>
-      </div>-->
-
-<!--<div class="row">
-        <div id="games_block_button" class="custom_dropdown" data-bs-toggle="collapse" data-bs-target="#games_block">Games</div>
-          <div id="games_block" style="height: 200px;" class="collapse bg-secondary col-12"> 
-            INSERT GAMES HERE
-          </div>
-      </div>
-      
-      <br>
-
-      <div class="row">
-        <div class="custom_dropdown" data-bs-toggle="collapse" data-bs-target="#join_block">How to join the team</div>
-        <div id="join_block" style="height: 200px;" class="collapse bg-secondary col-12"> 
-          APPLICATION LINK HERE
-        </div>
-      </div>
-
-      <br>
-
-      <div class="row">
-        <div class="custom_dropdown" data-bs-toggle="collapse" data-bs-target="#mission_block">Our mission</div>
-        <div id="mission_block" style="height: 200px;" class="collapse bg-secondary col-12"> 
-            INFO ABOUT COMPANY
-        </div>
-      </div>-->
