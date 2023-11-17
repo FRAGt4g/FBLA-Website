@@ -4,13 +4,30 @@ body {
     background-color: var(--bs-primary);
 }
 
-.bg-primary-grad2 {
+.bg-primary-grad {
     background: linear-gradient(165deg, var(--bs-primary), var(--bs-primary), var(--bs-primary-light));
 }
 
-.bg-primary-grad {
-    background: linear-gradient(115deg, var(--bs-primary), var(--bs-primary-light));
+.bg-secondary-grad {
+    background: radial-gradient(var(--bs-secondary), var(--bs-secondary-dark));
 }
+.bg-secondary-grad2 {
+    background: radial-gradient(var(--bs-secondary) 50%, var(--bs-secondary-dark) 100%);
+    background-size: 0px;
+    transition: 0.5s;
+}
+
+.bg-secondary-grad2:hover{
+    background-size: 100%;
+    background: radial-gradient(var(--bs-secondary) 50%, var(--bs-secondary-dark) 100%);
+    font-size: 1.5rem;
+}
+
+/*.bg-secondary-grad2:after {
+    background: radial-gradient(var(--bs-secondary) 50%, var(--bs-secondary-dark) 100%);
+    background-color: red;
+}*/
+
 
 body::-webkit-scrollbar {
     display: none;
@@ -21,7 +38,8 @@ body::-webkit-scrollbar {
 }
 
 .text-secondary-grad {
-    background: linear-gradient(115deg, var(--bs-primary), var(--bs-secondary-dark));
+    background: linear-gradient(115deg, var(--bs-primary), var(--bs-primary-light));
+    box-shadow: 0 0 0;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -59,11 +77,6 @@ span {
     animation-name: fade-in;
     animation-duration: 1.5s;
     animation-delay: 10ms;
-    animation-iteration-count: 1;
-
-    animation-name: grad;
-    animation-duration: 1.5s;
-    animation-delay: 2s;
     animation-iteration-count: 1;
 
     box-shadow: 0px 0px 40px var(--bs-secondary-bg-subtle);

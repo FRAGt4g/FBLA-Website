@@ -11,29 +11,46 @@
         <script defer src="ApplicationMain.js"></script>
     </head>
     <body>  
-        <nav style="height: 90px;" class="show custom-shadow navbar navbar-expand-sm bg-primary navbar-dark sticky-top">
-            <a type="button" class="navbar-brand" href="../Main-Page/index.html"> 
-              <strong class="text-secondary brandName m-4">
-                MYTHOS
-              </strong>
-            </a>
-            <div class="justify-content-end navbar-collapse" id="collapsibleNavbar">
-              <ul class="ml-auto navbar-nav">
-                <!-- Not sure if this is nessecary
-                <li class="nav-item">
-                  <a id="about" class="nav-link" href="#">About Us</a>
-                </li>-->
-                <li class="nav-item btn bg-secondary m-3">
-                  <a class="nav-link" href="#" role="button">Games</a>
-                </li>
-                <li class="nav-item btn bg-secondary m-3">
-                  <a class="nav-link" href="#" role="button">Locations</a>
-                </li>
-                <li class="nav-item btn bg-secondary m-3">
-                  <a class="nav-link" href="#" role="button">Apply</a>
-                </li>
-              </ul>
+      <nav style="height: 90px;" class="show custom-shadow navbar navbar-expand-sm bg-primary navbar-dark sticky-top">
+          <a type="button" class="navbar-brand" href="../Main-Page/index.html"> 
+            <strong class="text-secondary brandName m-4">
+              MYTHOS
+            </strong>
+          </a>
+          <div class="justify-content-end navbar-collapse" id="collapsibleNavbar">
+            <ul class="ml-auto navbar-nav">
+              <!-- Not sure if this is nessecary
+              <li class="nav-item">
+                <a id="about" class="nav-link" href="#">About Us</a>
+              </li>-->
+              <li class="nav-item btn bg-secondary m-3">
+                <a class="nav-link" href="#" role="button">Games</a>
+              </li>
+              <li class="nav-item btn bg-secondary m-3">
+                <a class="nav-link" href="#" role="button">Locations</a>
+              </li>
+              <li class="nav-item btn bg-secondary m-3">
+                <a class="nav-link" href="#" role="button">Apply</a>
+              </li>
+            </ul>
+          </div>
+      </nav>
+
+      <div class="container mt-3">
+        <div id="applicationPage">
+          <h2>Application Information</h2>
+          <form action="/action_page.php">
+            <div class="mb-3 mt-3">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
             </div>
-          </nav>
+            <div class="mb-3">
+              <label for="pwd">Full Name</label>
+              <input type="password" class="form-control" id="pwd" placeholder="John Joe" name="pswd">
+            </div>
+            <button type="submit" class="btn btn-warning shadow-sm">Submit</button>
+          </form>
+        </div>
+      </div>
     </body>
 </html>
