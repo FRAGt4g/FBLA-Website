@@ -1,52 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Bootstrap Example</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../Miscellaneous/node_modules/bootstrap/main.css" rel="stylesheet">
-    <link href="MainPage.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script defer src="MainPage.js"></script>
-  </head>
 
-  <body id="body">
-    <!--    NAVBAR    -->
-    <nav style="height: 90px;" class="show custom-shadow navbar navbar-expand-sm bg-primary-grad navbar-dark sticky-top">
-      <a type="button" class="navbar-brand" href="../Main-Page/index.html"> 
-        <strong class="text-secondary brandName m-4">
-          MYTHOS
-        </strong>
-      </a>
-      <div class="justify-content-end navbar-collapse" id="collapsibleNavbar">
-        <ul class="ml-auto navbar-nav">
-          <!-- Not sure if this is nessecary
+<head>
+  <title>MYTHOS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="../Miscellaneous/node_modules/bootstrap/main.css" rel="stylesheet">
+  <link href="../Miscellaneous/general.css" rel="stylesheet">
+  <link href="MainPage.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script defer src="MainPage.js"></script>
+</head>
+
+<body id="body">
+  <!--    NAVBAR    -->
+  <nav style="height: 90px;" class="show custom-shadow navbar navbar-expand-sm bg-primary-grad navbar-dark sticky-top">
+    <a type="button" class="navbar-brand" href="../Main-Page/index.html">
+      <strong class="text-secondary brandName m-4">
+        MYTHOS
+      </strong>
+    </a>
+    <div class="justify-content-end navbar-collapse" id="collapsibleNavbar">
+      <ul class="ml-auto navbar-nav">
+        <!-- Not sure if this is nessecary
           <li class="nav-item">
             <a id="about" class="nav-link" href="#">About Us</a>
           </li>-->
-          <li class="nav-item btn bg-secondary-grad2 m-3">
-            <a class="nav-link" href="#" role="button">Home</a>
-          </li>
-          <li class="nav-item btn bg-secondary-grad2 m-3">
-            <a class="nav-link" href="../About-Us-Page/AboutUs.html" role="button">Who We Are</a>
-          </li>
-          <li class="nav-item btn bg-secondary-grad2 m-3">
-            <a class="nav-link" href="../Application-Page/ApplicationMain.html" role="button">Join The Team</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <div id="main_container" class="container-fluid">
-      <span>
-        <div id="intro-block" class="z-3 rounded-3 text-white bg-secondary-grad startJumbotron">
-          <p class="m-3">TURNING DREAMS TO</p>
-          <p onclick="zoomin(this)" id="reality" class="text-secondary-grad align-bottom">REALITY</p> 
-        </div>
-      </span>
-
-      <br>
+        <li class="nav-item btn m-3">
+          <a class="nav-link underline-hover-primary" href="#" role="button">Home</a>
+        </li>
+        <li class="nav-item btn m-3">
+          <a class="nav-link underline-hover-primary" href="../About-Us-Page/AboutUs.html" role="button">Who We Are</a>
+        </li>
+        <li class="nav-item btn m-3">
+          <a class="nav-link underline-hover-primary" href="../Application-Page/ApplicationMain.html" role="button">Join
+            The Team</a>
+        </li>
+      </ul>
     </div>
-  </body>
+  </nav>
+
+  <div id="main_container" class="container-fluid">
+    <span>
+      <div id="intro-block" class="z-3 rounded-3 text-white bg-secondary-grad startJumbotron">
+        <p class="m-3">TURNING DREAMS TO</p>
+        <p onclick="zoomin(this)" id="reality" class="text-secondary-grad align-bottom">REALITY</p>
+      </div>
+    </span>
+
+    <br>
+  </div>
+</body>
+
 </html>
