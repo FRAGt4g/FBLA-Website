@@ -1,5 +1,16 @@
-#applyHereBG {
-    width: 100px;
-    height: 100px;
-    background-color: blue;
+@import '/Miscellaneous/node_modules/bootstrap/main.css';
+body {
+    background-color: var(--bs-secondary);
+}
+
+.brandName {
+    font-size: 2rem;
+}
+
+#applicationPage {
+    background: var(--bs-primary);
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0px 0px 20px 0px var(--bs-primary);
 }

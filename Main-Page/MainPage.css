@@ -1,7 +1,56 @@
 @import '/Miscellaneous/node_modules/bootstrap/main.css';
 
+body {
+    background-color: var(--bs-primary);
+}
+
+.bg-primary-grad {
+    background: linear-gradient(165deg, var(--bs-primary), var(--bs-primary), var(--bs-primary-light));
+}
+
+.bg-secondary-grad {
+    background: radial-gradient(var(--bs-secondary), var(--bs-secondary-dark));
+}
+.bg-secondary-grad2 {
+    background: radial-gradient(var(--bs-secondary) 50%, var(--bs-secondary-dark) 100%);
+    background-size: 0px;
+    transition: 0.5s;
+}
+
+.bg-secondary-grad2:hover{
+    background-size: 100%;
+    background: radial-gradient(var(--bs-secondary) 50%, var(--bs-secondary-dark) 100%);
+    font-size: 1.5rem;
+}
+
+/*.bg-secondary-grad2:after {
+    background: radial-gradient(var(--bs-secondary) 50%, var(--bs-secondary-dark) 100%);
+    background-color: red;
+}*/
+
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
 .brandName {
     font-size: 2rem;
+}
+
+.text-secondary-grad {
+    background: linear-gradient(115deg, var(--bs-primary), var(--bs-primary-light));
+    box-shadow: 0 0 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes grad {
+    from {
+        background: linear-gradient(115deg, var(--bs-primary), var(--bs-primary-light));
+    }
+    to {
+        background: linear-gradient(115deg, var(--bs-secondary), var(--bs-secondary-dark));
+    }
 }
 
 .startJumbotron {
@@ -14,7 +63,6 @@
 .startJumbotron #reality {
     text-align: center;
     font-weight: bolder;
-    font-size: 150px;
     font-style: italic;
 }
 
@@ -22,7 +70,50 @@ span {
     display: grid;
     place-items: center;
     align-content: center;
-    min-height: 100vh;
+    min-height: 70vh;
+}
+
+#intro-block {
+    animation-name: fade-in;
+    animation-duration: 1.5s;
+    animation-delay: 10ms;
+    animation-iteration-count: 1;
+
+    box-shadow: 0px 0px 40px var(--bs-secondary-bg-subtle);
+    width: 80vw;
+    aspect-ratio: 16/7;
+    align-items: end;
+    font-size: 7vw;
+}
+
+#intro-block #reality {
+    font-size: 2em;
+}
+
+
+#intro-block:hover {
+    cursor: pointer;
+}
+
+
+#reality {
+    animation-name: fade-in !important;
+    animation-duration: 1.5s !important;
+    animation-delay: 10ms;
+    animation-iteration-count: 1 !important;
+    animation-fill-mode: backwards;
+}
+
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .custom-shadow {
