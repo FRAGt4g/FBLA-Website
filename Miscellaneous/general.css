@@ -1,0 +1,59 @@
+@import '/Miscellaneous/node_modules/bootstrap/main.css';
+
+body {
+    background-color: var(--bs-primary);
+}
+
+.bg-primary-grad {
+    background: linear-gradient(165deg, var(--bs-primary), var(--bs-primary), var(--bs-primary-light));
+}
+
+.bg-secondary-grad {
+    background: radial-gradient(var(--bs-secondary), var(--bs-secondary-dark));
+}
+.bg-secondary-grad2 {
+    background: radial-gradient(var(--bs-secondary) 50%, var(--bs-secondary-dark) 100%);
+    background-size: 0px;
+    transition: 0.5s;
+}
+
+.bg-secondary-grad2:hover{
+    background-size: 100%;
+    background: radial-gradient(var(--bs-secondary) 50%, var(--bs-secondary-dark) 100%);
+    font-size: 1.5rem;
+}
+
+.custom-shadow {
+    box-shadow: 0px 2px 12px var(--bs-secondary-bg-subtle);
+}
+
+.underline-hover-primary {
+  display: block;
+  position: relative;
+  padding: 0.2em 0;
+  overflow: hidden;
+  opacity: 1;
+}
+
+.brandName {
+    font-size: 2rem;
+}
+
+/* Fade in */
+.underline-hover-primary::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.2em;
+  background: var(--bs-secondary);
+  opacity: 1;
+  transform: translate3d(-100%, 0, 0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.underline-hover-primary:hover::after {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
