@@ -14,3 +14,12 @@ body {
     padding: 10px;
     box-shadow: 0px 0px 20px 0px var(--bs-primary);
 }
+
+#visible {
+    visibility: visible;
+}
+
+#invisibile {
+    visibility: hidden;
+}
+

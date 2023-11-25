@@ -1,10 +1,73 @@
-const form = document.getElementById('btn');
-console.log("Hello World");
+var test = document.getElementById("NIHAO");
+var form = document.getElementById("myForm");
+var submitButton = document.getElementById("submitButton");
+var dropdownButton = document.getElementById("dropdownMenuButton");
+var dropdownItems = document.querySelectorAll(".dropdown-item");
+var position = document.getElementById("position");
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxjIXnkiQHjUh1h5x9cAy3kSQmFrQ1ecl15fJvk35MpUcZiVhX2aESZdAVg8P5Hi-WGOQ/exec";
 
-/*form.addEventListener('submit', function(e) {
-    alert("TEMP");
+dropdownItems.forEach(function (item) {
+    item.addEventListener("click", function() {
+        var selectedValue = item.getAttribute("data-position");
+        dropdownButton.innerHTML = selectedValue;
+        position.value = selectedValue;
+    })
+})
+
+//testing ok leave me alone
+/*test.addEventListener("click", function() {
+    if (test.innerHTML == "NI HAO") {
+        test.innerHTML = "IM SPECIAL";
+    } else {
+        test.innerHTML = "NI HAO";
+    }
+    
+});*/
+
+submitButton.addEventListener("click", function() {
+    test.innerHTML = "NOOOOOOOOO";
+    document.getElementById("loadingIcon").classList.remove("d-none");
+})
+
+/*form.addEventListener("submit", e => {
+    e.preventDefault()
+    console.log('SCRIPT_URL:', SCRIPT_URL);
+
+    fetch(SCRIPT_URL, { method: 'POST', body: new FormData(form) })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Server response:', data);
+          position.textContent = "Form Has Been Updated!";
+        })
+        .catch(error => {
+          console.error('Error submitting form:', error);
+        });
+        
+})*/
+
+form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const fd = new FormData(form);
+    var selectedPosition = dropdownButton.getAttribute("data-position");
+    var formData = new FormData(this);
+    formData.set("position", selectedPosition);
 
-})*/
+    fetch(SCRIPT_URL, { method: 'POST', body: new FormData(this) })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Server response:', data);
+        position.textContent = "Form Has Been Updated!";
+
+        // Handle success
+        if (data.result === 'success') {
+          alert('Form has been submitted successfully. Updated row: ' + data.row);
+        } else {
+          alert('Form submission failed.');
+        }
+        document.getElementById("loadingIcon").classList.add("d-none");
+      })
+      .catch(error => {
+        console.error('Error submitting form:', error);
+        document.getElementById("loadingIcon").classList.add("d-none");
+      });
+  });
