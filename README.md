@@ -2,7 +2,7 @@
 
 **CUSTOM BOOTSTRAP CSS FILE IS LOCATED AT: Miscellaneous/node_modules/bootstrap/main.css**
 
-This is the website (code) for the FBLA project 2023 with Miles Fritzmather, and Matthew Shi.
+This is the website (code) for the FBLA project 2023 with Miles Fritzmather, Jacob Mathew, and Matthew Shi.
 Link to pdf with info: https://connect.fbla.org/headquarters/files/High%20School%20Competitive%20Events%20Resources/Individual%20Guidelines/Presentation%20Events/Website-Coding--Development.pdf
 
 **Goals:**
