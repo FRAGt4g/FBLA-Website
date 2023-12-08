@@ -6,6 +6,38 @@ var dropdownItems = document.querySelectorAll(".dropdown-item");
 var position = document.getElementById("position");
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxjIXnkiQHjUh1h5x9cAy3kSQmFrQ1ecl15fJvk35MpUcZiVhX2aESZdAVg8P5Hi-WGOQ/exec";
 
+const accordion = document.getElementsByClassName("accordionElement");
+
+for (i = 0; i < accordion.length; i++) {
+    console.log(accordion[i].innerHTML);
+    console.log("child: " + accordion[i].children[0].innerHTML);
+    accordion[i].children[0].addEventListener('click', function() {
+        this.parentNode.classList.toggle('active');
+    })
+}
+
+function zoomin(e) {
+    e.style.zIndex = "1000";
+    console.log(e.style.zIndex);
+    e.parentNode.animate(
+        [
+            { 
+                transform: 'scale(20)',
+                color: 'red',
+            }
+        ], {
+            duration: 500,
+            easing: 'ease-in',
+            delay: 0,
+            iterations: 1,
+            direction: 'alternate',
+            fill: 'both'
+        },
+    ).onfinish = function () {
+        window.location.href = "../Application-Page/ApplicationMain.html"
+    };
+}
+
 dropdownItems.forEach(function (item) {
     item.addEventListener("click", function() {
         var selectedValue = item.getAttribute("data-position");

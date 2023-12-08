@@ -1,96 +1,434 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>MYTHOS</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="../Miscellaneous/node_modules/bootstrap/main.css" rel="stylesheet">
-        <link href="ApplicationMain.css" rel="stylesheet">
-        <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    </head>
-    <body>  
-      <nav style="height: 90px;" class="show custom-shadow navbar navbar-expand-sm bg-primary navbar-dark sticky-top">
-          <a type="button" class="navbar-brand" href="../Main-Page/index.html"> 
-            <strong class="text-secondary brandName m-4">
-              MYTHOS
-            </strong>
-          </a>
-          <div class="justify-content-end navbar-collapse" id="collapsibleNavbar">
-            <ul class="ml-auto navbar-nav">
-              <!-- Not sure if this is nessecary bros stupid cant even spell neccessary smh
-              <li class="nav-item btn bg-secondary m-3">
-                <a id="about" class="nav-link" href="#">About Us</a>
-              </li> -->
-              <li class="nav-item btn bg-secondary m-3">
-                <a class="nav-link" href="#" role="button">Games</a>
-              </li>
-              <li class="nav-item btn bg-secondary m-3">
-                <a class="nav-link" href="#" role="button">Locations</a>
-              </li>
-              <li class="nav-item btn bg-secondary m-3">
-                <a class="nav-link" href="#" role="button">Apply</a>
-              </li>
-            </ul>
+
+<head>
+  <title>MYTHOS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="../Miscellaneous/node_modules/bootstrap/main.css" rel="stylesheet">
+  <link href="../Miscellaneous/general.css" rel="stylesheet">
+  <link href="ApplicationMain.css" rel="stylesheet">
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <nav class="bottom-space show custom-shadow navbar navbar-expand-sm bg-primary-grad sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#body">
+        <strong class="text-secondary brandName m-4">
+          MYTHOS
+        </strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbarPortion">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="justify-content-end collpase navbar-collapse" id="collapsibleNavbarPortion">
+        <ul class="ml-auto navbar-nav text-secondary">
+          <li class="nav-item m-3">
+            <a class="nav-link underline-hover-primary" href="../Main-Page/index.html">Home</a>
+          </li>
+          <li class="nav-item m-3">
+            <a class="nav-link underline-hover-primary" href="../About-Us-Page/AboutUs.html">Who We Are</a>
+          </li>
+          <li class="nav-item m-3">
+            <a class="nav-link underline-hover-primary" href="../Application-Page/ApplicationMain.html">Join
+              The Team</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="auto-center">
+    <form id = "myForm" action = "https://script.google.com/macros/s/AKfycbxjIXnkiQHjUh1h5x9cAy3kSQmFrQ1ecl15fJvk35MpUcZiVhX2aESZdAVg8P5Hi-WGOQ/exec" method = "POST">
+
+      <div class="mb-3 mt-3">
+        <label for="date">Date (MM, DD, YYYY):</label>
+        <input type="date" class="form-control" id="date" placeholder="Enter Date" name="date" required>
+      </div>
+
+      <div class="mb-3 mt-3">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="pwd">Full Name</label>
+        <input type="text" class="form-control" id="name" placeholder="John Doe" name="name">
+      </div>
+
+      <div class="my-3 applicant-position">
+        <div class="dropdown">
+          <button class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" id="dropdownMenuButton" name = "position">
+            Position
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#" data-position="Visual Artist">Visual Artist</a>
+            <a class="dropdown-item" href="#" data-position="Network Engineer">Network Programmer</a>
+            <a class="dropdown-item" href="#" data-position="Development Director">Development Director</a>
           </div>
-      </nav>
-
-      <div class="container mt-3">
-        <div id="applicationPage">
-          <h2>Application Information</h2>
-
-          <form id = "myForm" action = "https://script.google.com/macros/s/AKfycbxjIXnkiQHjUh1h5x9cAy3kSQmFrQ1ecl15fJvk35MpUcZiVhX2aESZdAVg8P5Hi-WGOQ/exec" method = "POST">
-            
-            <div class="mb-3 mt-3">
-              <label for="date">Date (MM, DD, YYYY):</label>
-              <input type="date" class="form-control" id="date" placeholder="Enter Date" name="date" required>
-            </div>
-            
-            <div class="mb-3 mt-3">
-              <label for="email">Email:</label>
-              <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email" required>
-            </div>
-
-            <div class="mb-3">
-              <label for="pwd">Full Name</label>
-              <input type="text" class="form-control" id="name" placeholder="John Doe" name="name">
-            </div>
-
-            <div class="my-3 applicant-position">
-              <div class="dropdown">
-                <button class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" id="dropdownMenuButton" name = "position">
-                  Position
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#" data-position="Visual Artist">Visual Artist</a>
-                  <a class="dropdown-item" href="#" data-position="Network Engineer">Network Programmer</a>
-                  <a class="dropdown-item" href="#" data-position="Development Director">Development Director</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="my-3 applicant-resume" name = "resume"> 
-              <label for="formFile" class="form-label"> Upload Google Drive Link to Resume</label>
-              <input type="text" class="form-control" id="resume" placeholder="https://docs.google.com/document/...=sharing" name="resume" required>
-            </div>
-            <div>
-              <button id = "btn" id = "submitButton" name="submit" type="submit" class="btn btn-warning shadow-sm">Submit</button> 
-            </div>
-
-            <div class = "my-3 d-none" id="loadingIcon">
-              <div class="spinner-border text-warning" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </div>
-
-            <div id = "NIHAO">
-              <label class = "d-none">Result</label>
-              <input type="text" class = "my-3 d-none" id="position" name="position">
-            </div>
-          </form>
-
         </div>
       </div>
-      <script src="ApplicationMain.js"></script>
-    </body>
+
+      <div class="my-3 applicant-resume" name = "resume"> 
+        <label for="formFile" class="form-label"> Upload Google Drive Link to Resume</label>
+        <input type="text" class="form-control" id="resume" placeholder="https://docs.google.com/document/...=sharing" name="resume" required>
+      </div>
+      <div>
+        <button id = "btn" id = "submitButton" name="submit" type="submit" class="btn btn-warning shadow-sm">Submit</button> 
+      </div>
+
+      <div class = "my-3 d-none" id="loadingIcon">
+        <div class="spinner-border text-warning" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+
+      <div id = "NIHAO">
+        <label class = "d-none">Result</label>
+        <input type="text" class = "my-3 d-none" id="position" name="position">
+      </div>
+    </form>
+    <span class="opening-title-group">
+      Computer Programing
+    </span>
+    <div class="info-card">
+        <span>
+          <div class="info-card-title">
+            <span>
+              Visual Artist
+            </span>
+            <span>
+              +100k
+            </span>
+          </div>
+          <div class="info-card-content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.
+            Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+            Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
+            Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.
+            Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim.
+            Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue.
+            Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales.
+            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh.
+            Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.
+          </div>
+          <div class="accordionElement">
+            <div class="accordionHeader">
+              <span id="title">
+                <h2>Apply Now</h2>
+              </span>
+            </div>
+            <div class="accordionContent">
+              <form id="myForm"
+                action="https://script.google.com/macros/s/AKfycbxjIXnkiQHjUh1h5x9cAy3kSQmFrQ1ecl15fJvk35MpUcZiVhX2aESZdAVg8P5Hi-WGOQ/exec"
+                method="POST">
+                <div class="mb-3">
+                  <label for="pwd">Full Name</label>
+                  <input type="text" class="form-control" id="name" placeholder="John Doe" name="name">
+                </div>
+
+                <div class="mb-3 mt-3">
+                  <label for="email">Email:</label>
+                  <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email" required>
+                </div>
+
+                <div class="my-3 applicant-resume" name="resume">
+                  <label for="formFile" class="form-label"> Upload Google Drive Link to Resume</label>
+                  <input type="text" class="form-control" id="resume"
+                    placeholder="https://docs.google.com/document/...=sharing" name="resume" required>
+                </div>
+                <div>
+                  <button id="btn" id="submitButton" name="submit" type="submit"
+                    class="btn btn-warning shadow-sm">Submit</button>
+                </div>
+
+                <div class="my-3 d-none" id="loadingIcon">
+                  <div class="spinner-border text-warning" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                </div>
+
+                <div id="NIHAO">
+                  <label class="d-none">Result</label>
+                  <input type="text" class="my-3 d-none" id="position" name="position">
+                </div>
+              </form>
+            </div>
+          </div>
+        </span>
+      </div>
+    <div class="info-card">
+        <span>
+          <div class="info-card-title">
+            <span>
+              3D Artist
+            </span>
+            <span>
+              80k
+            </span>
+          </div>
+          <div class="info-card-content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.
+            Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+            Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
+            Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.
+            Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim.
+            Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue.
+            Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales.
+            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh.
+            Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.
+          </div>
+          <div class="accordionElement">
+            <div class="accordionHeader">
+              <span id="title">
+                <h2>Apply Now</h2>
+              </span>
+            </div>
+            <div class="accordionContent">
+              <form id="myForm"
+                action="https://script.google.com/macros/s/AKfycbxjIXnkiQHjUh1h5x9cAy3kSQmFrQ1ecl15fJvk35MpUcZiVhX2aESZdAVg8P5Hi-WGOQ/exec"
+                method="POST">
+                <div class="mb-3">
+                  <label for="pwd">Full Name</label>
+                  <input type="text" class="form-control" id="name" placeholder="John Doe" name="name">
+                </div>
+
+                <div class="mb-3 mt-3">
+                  <label for="email">Email:</label>
+                  <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email" required>
+                </div>
+
+                <div class="my-3 applicant-resume" name="resume">
+                  <label for="formFile" class="form-label"> Upload Google Drive Link to Resume</label>
+                  <input type="text" class="form-control" id="resume"
+                    placeholder="https://docs.google.com/document/...=sharing" name="resume" required>
+                </div>
+                <div>
+                  <button id="btn" id="submitButton" name="submit" type="submit"
+                    class="btn btn-warning shadow-sm">Submit</button>
+                </div>
+
+                <div class="my-3 d-none" id="loadingIcon">
+                  <div class="spinner-border text-warning" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                </div>
+
+                <div id="NIHAO">
+                  <label class="d-none">Result</label>
+                  <input type="text" class="my-3 d-none" id="position" name="position">
+                </div>
+              </form>
+            </div>
+          </div>
+        </span>
+      </div>
+    <div class="info-card">
+        <span>
+          <div class="info-card-title">
+            <span>
+              Network Manager
+            </span>
+            <span>
+              75k
+            </span>
+          </div>
+          <div class="info-card-content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.
+            Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+            Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
+            Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.
+            Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim.
+            Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue.
+            Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales.
+            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh.
+            Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.
+          </div>
+          <div class="accordionElement">
+            <div class="accordionHeader">
+              <span id="title">
+                <h2>Apply Now</h2>
+              </span>
+            </div>
+            <div class="accordionContent">
+              <form id="myForm"
+                action="https://script.google.com/macros/s/AKfycbxjIXnkiQHjUh1h5x9cAy3kSQmFrQ1ecl15fJvk35MpUcZiVhX2aESZdAVg8P5Hi-WGOQ/exec"
+                method="POST">
+                <div class="mb-3">
+                  <label for="pwd">Full Name</label>
+                  <input type="text" class="form-control" id="name" placeholder="John Doe" name="name">
+                </div>
+
+                <div class="mb-3 mt-3">
+                  <label for="email">Email:</label>
+                  <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email" required>
+                </div>
+
+                <div class="my-3 applicant-resume" name="resume">
+                  <label for="formFile" class="form-label"> Upload Google Drive Link to Resume</label>
+                  <input type="text" class="form-control" id="resume"
+                    placeholder="https://docs.google.com/document/...=sharing" name="resume" required>
+                </div>
+                <div>
+                  <button id="btn" id="submitButton" name="submit" type="submit"
+                    class="btn btn-warning shadow-sm">Submit</button>
+                </div>
+
+                <div class="my-3 d-none" id="loadingIcon">
+                  <div class="spinner-border text-warning" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                </div>
+
+                <div id="NIHAO">
+                  <label class="d-none">Result</label>
+                  <input type="text" class="my-3 d-none" id="position" name="position">
+                </div>
+              </form>
+            </div>
+          </div>
+        </span>
+      </div>
+    <span class="opening-title-group">
+      Art
+    </span>
+    <div class="info-card">
+        <span>
+          <div class="info-card-title">
+            <span>
+              Quality Assurance Engineer
+            </span>
+            <span>
+              50k
+            </span>
+          </div>
+          <div class="info-card-content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.
+            Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+            Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
+            Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.
+            Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim.
+            Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue.
+            Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales.
+            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh.
+            Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.
+          </div>
+          <div class="accordionElement">
+            <div class="accordionHeader">
+              <span id="title">
+                <h2>Apply Now</h2>
+              </span>
+            </div>
+            <div class="accordionContent">
+              <form id="myForm"
+                action="https://script.google.com/macros/s/AKfycbxjIXnkiQHjUh1h5x9cAy3kSQmFrQ1ecl15fJvk35MpUcZiVhX2aESZdAVg8P5Hi-WGOQ/exec"
+                method="POST">
+                <div class="mb-3">
+                  <label for="pwd">Full Name</label>
+                  <input type="text" class="form-control" id="name" placeholder="John Doe" name="name">
+                </div>
+
+                <div class="mb-3 mt-3">
+                  <label for="email">Email:</label>
+                  <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email" required>
+                </div>
+
+                <div class="my-3 applicant-resume" name="resume">
+                  <label for="formFile" class="form-label"> Upload Google Drive Link to Resume</label>
+                  <input type="text" class="form-control" id="resume"
+                    placeholder="https://docs.google.com/document/...=sharing" name="resume" required>
+                </div>
+                <div>
+                  <button id="btn" id="submitButton" name="submit" type="submit"
+                    class="btn btn-warning shadow-sm">Submit</button>
+                </div>
+
+                <div class="my-3 d-none" id="loadingIcon">
+                  <div class="spinner-border text-warning" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                </div>
+
+                <div id="NIHAO">
+                  <label class="d-none">Result</label>
+                  <input type="text" class="my-3 d-none" id="position" name="position">
+                </div>
+              </form>
+            </div>
+          </div>
+        </span>
+      </div>
+    <div class="info-card">
+        <span>
+          <div class="info-card-title">
+            <span>
+              Enviroment Artist
+            </span>
+            <span>
+              75k
+            </span>
+          </div>
+          <div class="info-card-content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.
+            Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+            Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
+            Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.
+            Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim.
+            Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue.
+            Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales.
+            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh.
+            Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.
+          </div>
+          <div class="accordionElement">
+            <div class="accordionHeader">
+              <span id="title">
+                <h2>Apply Now</h2>
+              </span>
+            </div>
+            <div class="accordionContent">
+              <form id="myForm"
+                action="https://script.google.com/macros/s/AKfycbxjIXnkiQHjUh1h5x9cAy3kSQmFrQ1ecl15fJvk35MpUcZiVhX2aESZdAVg8P5Hi-WGOQ/exec"
+                method="POST">
+                <div class="mb-3">
+                  <label for="pwd">Full Name</label>
+                  <input type="text" class="form-control" id="name" placeholder="John Doe" name="name">
+                </div>
+
+                <div class="mb-3 mt-3">
+                  <label for="email">Email:</label>
+                  <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email" required>
+                </div>
+
+                <div class="my-3 applicant-resume" name="resume">
+                  <label for="formFile" class="form-label"> Upload Google Drive Link to Resume</label>
+                  <input type="text" class="form-control" id="resume"
+                    placeholder="https://docs.google.com/document/...=sharing" name="resume" required>
+                </div>
+                <div>
+                  <button id="btn" id="submitButton" name="submit" type="submit"
+                    class="btn btn-warning shadow-sm">Submit</button>
+                </div>
+
+                <div class="my-3 d-none" id="loadingIcon">
+                  <div class="spinner-border text-warning" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                </div>
+
+                <div id="NIHAO">
+                  <label class="d-none">Result</label>
+                  <input type="text" class="my-3 d-none" id="position" name="position">
+                </div>
+              </form>
+            </div>
+          </div>
+        </span>
+      </div>
+  </div>
+
+  <script src="ApplicationMain.js"></script>
+</body>
+
 </html>
