@@ -15,12 +15,12 @@ body::-webkit-scrollbar {
   max-width: 95vw;
 }
 
-.accordionParent .accordionElement {
+.accordionParent > .accordionElement {
   position: relative;
   margin: 10px 20px;
 }
 
-.accordionParent .accordionElement .accordionHeader {
+.accordionElement > .accordionHeader {
   cursor: pointer;
   height: 75px;
   background-color: var(--bs-secondary-dark);
@@ -31,7 +31,7 @@ body::-webkit-scrollbar {
   transition: 0.5s;
 }
 
-.accordionElement.active .accordionHeader {
+.accordionElement.active > .accordionHeader {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   transition: 0.5s;
@@ -46,7 +46,7 @@ body::-webkit-scrollbar {
   font-size: 1.5rem;
 }
 
-.accordionElement.active .accordionHeader #plusIcon {
+.accordionElement.active > .accordionHeader #plusIcon {
   animation: spin 0.5s ease-in-out 1;
 }
 
@@ -60,7 +60,7 @@ body::-webkit-scrollbar {
   }
 }
 
-.accordionContent {
+.accordionElement > .accordionContent {
   background: linear-gradient(180deg, var(--bs-secondary-dark) 5%, var(--bs-primary-light) 95%);
   position: relative;
   height: 0;
@@ -69,7 +69,7 @@ body::-webkit-scrollbar {
   transition: 0.5s;
 }
 
-.accordionElement.active .accordionContent {
+.accordionElement .active > .accordionContent {
   height: 300px;
   padding: 10px;
   border-radius: 0px;

@@ -100,7 +100,7 @@
   transition: 0.5s;
 }
 
-.accordionElement[class='active'] > .accordionContent {
+.accordionElement.active > .accordionContent {
   height: 400px;
   padding: 10px;
   border-radius: 0px;
@@ -108,7 +108,7 @@
   border-bottom-left-radius: 10px;
 }
 
-/*** Opening Group ***/
+/*** Opening Title Group ***/
 .opening-title-group {
   position: relative;
   transform: translateX(-10px);
@@ -120,4 +120,48 @@
   margin-top: 50px;
   text-indent: 20px;
   text-shadow: 0px 0px 5px white;
+}
+
+/*** Opening Group (Accordion) ***/
+.accordionElement.opening-group {
+  width: 95vw;
+}
+
+.accordionElement.opening-group > .accordionHeader {
+  background-color: var(--bs-primary);
+  
+  border: 5px solid var(--bs-secondary);
+  border-radius: 10px;
+  height: 110px;
+
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-indent: 20px;
+  text-shadow: 0px 0px 5px white;
+  display: flex;
+  align-items: center;
+}
+
+.accordionElement.opening-group > .accordionContent {
+  background: var(--bs-primary);
+}
+
+.accordionElement.opening-group.active > .accordionContent {
+  height: auto;
+}
+
+.accordionElement.opening-group.active > .accordionContent.height-one{
+  height: 263px;
+}
+
+.accordionElement.opening-group.active > .accordionContent.height-two{
+  height: 526px;
+}
+
+.accordionElement.opening-group.active > .accordionContent.height-three{
+  height: 789px;
+}
+
+.accordionElement.opening-group.active > .accordionContent.height-four{
+  height: 1130px;
 }
