@@ -1,0 +1,30 @@
+:root {
+  --accent-red: #7b2d39;
+  --accent-red-light: #ce6474;
+  --accent-blue: rgb(21,23,38);
+  --accent-blue-light: rgb(31,33,57);
+}
+
+.light-mode {
+  --background: rgb(31,33,57);
+  --background-accent-light: #c2c2c2;
+  --background-accent-dark: #404040;
+
+  --font-color-dark: #383838;
+  --font-color-light: #ededed;
+}
+
+.dark-mode {
+  --background: #22092C;
+  --background-accent-light: #4f4f4f;
+  --background-accent-dark: #141414;
+
+  --font-color-dark: #383838;
+  --font-color-light: #ededed;
+}
+
+body {
+  font-family: 'Roboto Mono', 'Montserrat', 'Poppins', monospace;
+  color: white;
+  overflow: hidden;
+}

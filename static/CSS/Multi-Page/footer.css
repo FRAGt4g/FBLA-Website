@@ -1,0 +1,18 @@
+footer.footer {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  
+  color: var(--accent-dark);
+  background: var(--background-light);
+  
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: bolder;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

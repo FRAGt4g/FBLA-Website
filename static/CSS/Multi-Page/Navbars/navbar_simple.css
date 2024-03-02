@@ -1,0 +1,49 @@
+.navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 5vh;
+  display: flex;
+  justify-content: space-between; /* Add this line to separate the brand and buttons */
+  align-items: center; /* Vertically center the items */
+}
+
+.navbar #brand_name {
+  margin-top: 10px;
+  font-weight: bolder;
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-left: 10px; 
+
+  transition: color 0.3s;
+}
+
+.navbar .navbar_buttons {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: gray;
+  text-decoration: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
+li {
+  margin: 0 7px;
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 13px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+/* Should add a marker for hovering and current tab in tab bar */

@@ -1,0 +1,37 @@
+nav {
+  position: fixed;
+  top: 15px;
+  left: 2.5vw;
+  width: 95vw;
+  background-color: var(--background-accent-dark);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0px 3px 7px black;
+  font-weight: bolder;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+li * {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 13px;
+  text-decoration: none;
+  transition: 
+}
+
+li *:hover:not(.active) {
+  color: var(--accent-red);
+}
+
+.active {
+  border-radius: 15px;
+  background-color: var(--accent-red);
+  color: var(--background-accent-dark);
+}
