@@ -10,24 +10,23 @@
 }
 
 .navbar #brand_name {
-  margin-top: 10px;
+  margin-top: 5px;
+  margin-left: 20px; 
   font-weight: bolder;
   font-size: 2rem;
   color: white;
   text-decoration: none;
   text-transform: uppercase;
-  margin-left: 10px; 
-
-  transition: color 0.3s;
 }
 
 .navbar .navbar_buttons {
   font-weight: bold;
   font-size: 1.5rem;
-  color: gray;
   text-decoration: none;
   list-style-type: none;
   margin: 0;
+  margin-top: 10px;
+  margin-right: 20px;
   padding: 0;
   display: inline;
 }
@@ -38,12 +37,26 @@ li {
 }
 
 li a {
-  display: block;
+  display: inline-block;
   color: white;
   text-align: center;
-  padding: 13px;
   text-decoration: none;
   transition: color 0.3s;
+  position: relative; /* Add this line to enable absolute positioning for the pseudo-element */
 }
 
-/* Should add a marker for hovering and current tab in tab bar */
+li a::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0; 
+  width: 0;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  transition: width 1s ease;
+}
+
+li a:hover::before {
+  width: 100%;
+}

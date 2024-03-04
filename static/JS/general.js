@@ -1,4 +1,24 @@
+const mouse_glow_radius = 20
 const mouse_glow = document.getElementById("mouse_glow")
+
+function getUntrimmedInnerHTML(element) {
+  let untrimmedHTML = '';
+
+  for (let i = 0; i < element.childNodes.length; i++) {
+    const node = element.childNodes[i];
+
+    if (node.nodeType === 3) {
+      // Node.TEXT_NODE represents a text node
+      untrimmedHTML += node.nodeValue;
+    } else if (node.nodeType === 1) {
+      // Node.ELEMENT_NODE represents an element node (HTML child found)
+      break;
+    }
+    // Other node types (e.g., comments) are ignored
+  }
+
+  return untrimmedHTML;
+}
 
 document.addEventListener('mousemove', function (mouse) {
   moveMouseBlob(mouse)
@@ -10,7 +30,7 @@ function moveMouseBlob(mouse) {
     left: `${mouse.clientX - mouse_glow.offsetWidth / 2}px`,
     top: `${mouse.clientY - mouse_glow.offsetHeight / 2}px`
   }, {
-    duration: 3000,
+    duration: 1500,
     fill: 'forwards'
   })
 }
@@ -22,48 +42,59 @@ function strectchAndRotateMouseBlob(mouse) {
   mouse_glow_rect = mouse_glow.getBoundingClientRect();
   x = mouse_glow_rect.left + mouse_glow_rect.width / 2;
   y = mouse_glow_rect.top + mouse_glow_rect.height / 2;
-  horizontal_distance = x - mouseX;
-  vertical_distance = y - mouseY;
+  horizontal_distance = x - mouse.clientX;
+  vertical_distance = y - mouse.clientY;
   distance = pixelsToVmin(Math.sqrt(
   horizontal_distance * horizontal_distance +
   vertical_distance * vertical_distance
   ))
   distance_scaler = Math.min(distance + mouse_glow_radius, mouse_glow_radius + 10)
-  let angle = calculateAngle({ x: x, y: y }, { x: mouseX, y: mouseY })
+  let angle = calculateAngle({ x: x, y: y }, { x: mouse.clientX, y: mouse.clientY })
   mouse_glow.style.transform = `rotate(${angle}deg)`;
   mouse_glow.style.width = `${distance_scaler}vmin`;
 }
 
-function scramble(e=this, tick_rate=10, total_time=1000) {
-  if (!e.start_text) e.start_text = e.innerText //For first time scramble, get the inital text
-  if (e.scrambling) return //If scrambling is already in progress, don't do anything
+function scramble(element, tick_rate = 10, total_time = 1000) {
+  if (!element.start_text) element.start_text = element.innerText;
+  if (element.scrambling) return;
 
-  e.scrambling = true
-  e.ticks = 0
-  e.length = e.innerText.length
-  e.intervalID = setInterval(function() {
-    e.ticks++
-    e.start_index = Math.round(e.ticks * tick_rate/total_time * e.length)
+  element.scrambling = true;
+  element.ticks = 0;
+  element.length = element.innerText.length;
+  element.startTime = performance.now();
+  element.html = element.innerHTML.substring(getUntrimmedInnerHTML(element).length)
+  
+  function scramble_tick() {
+    currentTime = performance.now();
+    element.start_index = Math.floor(
+      (currentTime - element.startTime) / total_time * element.length
+    );
 
-    e.innerText = e.start_text.substring(0, e.start_index)
+    element.innerText = element.start_text.substring(0, element.start_index);
 
-    for (i = e.start_index; i < e.length; i++) {
-      toAdd = ""
-      if (e.start_text.charAt(i) == " ") {
-        toAdd += " "
-        i++
+    for (let i = element.start_index; i < element.length; i++) {
+      let toAdd = "";
+      if (element.start_text.charAt(i) == " ") {
+        toAdd += " ";
+        i++;
       }
-      toAdd += String.fromCharCode(65 + Math.floor(Math.random() * 52))
-      e.innerText += toAdd
+      toAdd += String.fromCharCode(65 + Math.floor(Math.random() * 52));
+      element.innerText += toAdd;
     }
 
-    //End condition
-    if (e.ticks * tick_rate >= total_time) {
-      clearInterval(e.intervalID)
-      e.scrambling = false
+    element.innerHTML = element.innerText + element.html;
+
+    // End condition
+    if (currentTime - element.startTime < total_time) {
+      requestAnimationFrame(scramble_tick);
+    } else {
+      element.scrambling = false;
     }
-  }, tick_rate)
+  }
+
+  requestAnimationFrame(scramble_tick);
 }
+
 
 //Helpers
 function calculateAngle(p1, p2) {

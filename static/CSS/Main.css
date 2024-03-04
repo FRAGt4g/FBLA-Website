@@ -10,39 +10,40 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  backdrop-filter: blur(3vmin);
+  backdrop-filter: blur(20vmin);
 }
 
 #mouse_glow {
-  background: radial-gradient(
-    var(--accent-red), 
-    var(--accent-red-light)
+  background: linear-gradient(
+    to right,
+    var(--accent-red-light),
+    var(--accent-red-light),
+    darkred
   );
   
   position: absolute;
-  left: 400px;
-  top: 400px;
+  left: 50%;
+  top: 50%;
   
-  width: 15vmin;
-  height: 15vmin;
+  width: 45vmin;
+  height: 45vmin;
   border-radius: 50%;
-  opacity: 0.8;
-  /* animation: rotate 20s infinite;
-  animation-fill-mode: forwards; */
+  animation: rotate 20s infinite;
+  animation-fill-mode: forwards;
 }
 
 @keyframes rotate {
   0% {
-    scale: 1 1.2;
     rotate: 0deg;
+    scale: 1;
   }
 
-  20% {
+  50% {
     scale: 1 1.5;
   }
 
   100% {
-    scale: 1 1.2;
     rotate: 360deg;
+    scale: 1;
   }
 }
