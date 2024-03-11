@@ -4,6 +4,13 @@ body {
   background: black;
 }
 
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: transparent;
+}
+
 #mouse_blur {
   height: 100%;
   width: 100%;
@@ -11,14 +18,16 @@ body {
   left: 0;
   top: 0;
   backdrop-filter: blur(20vmin);
+  z-index: -10;
 }
 
 #mouse_glow {
+  z-index: -11;
   background: linear-gradient(
     to right,
-    var(--accent-red-light),
-    var(--accent-red-light),
-    darkred
+    var(--accent-jacob),
+    var(--accent-jacob),
+    var(--accent-jacob-dark)
   );
   
   position: absolute;
@@ -34,7 +43,6 @@ body {
 
 @keyframes rotate {
   0% {
-    rotate: 0deg;
     scale: 1;
   }
 
@@ -43,7 +51,6 @@ body {
   }
 
   100% {
-    rotate: 360deg;
     scale: 1;
   }
 }

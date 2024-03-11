@@ -1,4 +1,4 @@
-const mouse_glow_radius = 20
+const css = getComputedStyle(document.body)
 const mouse_glow = document.getElementById("mouse_glow")
 
 function getUntrimmedInnerHTML(element) {
@@ -21,11 +21,7 @@ function getUntrimmedInnerHTML(element) {
 }
 
 document.addEventListener('mousemove', function (mouse) {
-  moveMouseBlob(mouse)
-  //strectchAndRotateMouseBlob(mouse)
-});
-
-function moveMouseBlob(mouse) {
+  //Move Mouse Glow
   mouse_glow.animate({
     left: `${mouse.clientX - mouse_glow.offsetWidth / 2}px`,
     top: `${mouse.clientY - mouse_glow.offsetHeight / 2}px`
@@ -33,27 +29,15 @@ function moveMouseBlob(mouse) {
     duration: 1500,
     fill: 'forwards'
   })
-}
-function strectchAndRotateMouseBlob(mouse) {
-  /* 
-   * Commented out code stretches and rotates glow orb. Is not really nessecary from personal experience and can bug out 
-   * Removed variable mouse_glow_radius which is nessecary for this to work. It is a number in terms of vmin
-   */
-  mouse_glow_rect = mouse_glow.getBoundingClientRect();
-  x = mouse_glow_rect.left + mouse_glow_rect.width / 2;
-  y = mouse_glow_rect.top + mouse_glow_rect.height / 2;
-  horizontal_distance = x - mouse.clientX;
-  vertical_distance = y - mouse.clientY;
-  distance = pixelsToVmin(Math.sqrt(
-  horizontal_distance * horizontal_distance +
-  vertical_distance * vertical_distance
-  ))
-  distance_scaler = Math.min(distance + mouse_glow_radius, mouse_glow_radius + 10)
-  let angle = calculateAngle({ x: x, y: y }, { x: mouse.clientX, y: mouse.clientY })
-  mouse_glow.style.transform = `rotate(${angle}deg)`;
-  mouse_glow.style.width = `${distance_scaler}vmin`;
-}
+});
 
+//Initialize all scramble elemnents
+document.querySelectorAll("[scramble]").forEach((element) => {
+  element.addEventListener("mouseenter", () => {
+    let values = element.getAttribute("scramble").replace(" ", "").split(",")
+    scramble(element, values[0], values[1])
+  })
+})
 function scramble(element, tick_rate = 10, total_time = 1000) {
   if (!element.start_text) element.start_text = element.innerText;
   if (element.scrambling) return;
@@ -63,9 +47,15 @@ function scramble(element, tick_rate = 10, total_time = 1000) {
   element.length = element.innerText.length;
   element.startTime = performance.now();
   element.html = element.innerHTML.substring(getUntrimmedInnerHTML(element).length)
+  element.lastTickTime = performance.now();
   
   function scramble_tick() {
-    currentTime = performance.now();
+    let currentTime = performance.now();
+    // console.log("current: " + currentTime + " | last: " + element.lastTickTime)
+    if (currentTime - element.lastTickTime < tick_rate) {
+      
+    }
+    
     element.start_index = Math.floor(
       (currentTime - element.startTime) / total_time * element.length
     );
@@ -84,17 +74,17 @@ function scramble(element, tick_rate = 10, total_time = 1000) {
 
     element.innerHTML = element.innerText + element.html;
 
-    // End condition
+    // Inverse End condition
     if (currentTime - element.startTime < total_time) {
       requestAnimationFrame(scramble_tick);
-    } else {
-      element.scrambling = false;
+      return
     }
+    
+    element.scrambling = false;
   }
 
   requestAnimationFrame(scramble_tick);
 }
-
 
 //Helpers
 function calculateAngle(p1, p2) {
